@@ -1,8 +1,10 @@
 # MoleditPy ORCA Calculator Plugin
 
-![ORCA Calculator demo video](docs/demo.mp4)
+### 🎬 Demo video — click the image to play
 
-*(If the player does not load above, [download the demo video](docs/demo.mp4).)*
+[![ORCA Calculator demo video](img/tab_monitor.png)](docs/demo.mp4)
+
+*(4½-minute walkthrough with narration — opens GitHub's built-in player.)*
 
 A job queue manager for the [ORCA](https://www.faccts.de/orca/) quantum
 chemistry package, running inside
