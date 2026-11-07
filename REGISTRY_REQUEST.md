@@ -10,10 +10,10 @@ them, plus tag/version alignment and the SHA-256 of the asset).
 
 **Title:** Register New Plugin: ORCA Calculator
 
-- **Plugin Source URL:** `<direct link to the GitHub Release asset, must end in .zip — e.g. https://github.com/borisiori/moleditpy-orca-calculator/releases/download/v2026.11.04/orca_calculator.zip>`
+- **Plugin Source URL:** `https://github.com/borisiori/moleditpy-orca-calculator/releases/download/v2026.11.04/orca_calculator.zip`
 - **Target Action:** Register a New Plugin
 - **Plugin ID:** `orca_calculator`
-- **Expected SHA-256 Hash:** `<shasum -a 256 orca_calculator.zip — computed over the EXACT uploaded asset>`
+- **Expected SHA-256 Hash:** `bd51df9226c1f496227a54242b595350a115f410f4a966509705848df322c870`
 - **Tags:** Optimization
 - **Dependencies:** PySide6-Essentials
 - **Visibility:** Yes, make this plugin visible in the registry manager.
@@ -49,3 +49,5 @@ them, plus tag/version alignment and the SHA-256 of the asset).
 7. [ ] Compute the hash of the uploaded file: `shasum -a 256 orca_calculator.zip`.
 8. [ ] Fill the placeholders above with the real asset URL and hash.
 9. [ ] Submit the issue and mention the demo video/screenshots if desired.
+
+> **Submitted**: https://github.com/HiroYokoyama/moleditpy-plugins/issues/59 (2026-11-07)
