@@ -2,9 +2,7 @@
 
 ### 🎬 Demo video
 
-https://github.com/user-attachments/assets/28b253a4-fdec-438c-b9c7-a5a4cdc35580
-
-*(A 4½-minute walkthrough of all five tabs, with narration.)*
+https://github.com/user-attachments/assets/80291e95-2bdc-484f-b256-e6b41ba6489d
 
 A job queue manager for the [ORCA](https://www.faccts.de/orca/) quantum
 chemistry package, running inside
