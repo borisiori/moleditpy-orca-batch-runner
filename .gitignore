@@ -28,3 +28,4 @@ htmlcov/
 # Local run artifacts (never publish calculation results)
 *.log
 workspace/
+sync_orca_calculator.sh
