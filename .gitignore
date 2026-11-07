@@ -29,3 +29,4 @@ htmlcov/
 *.log
 workspace/
 sync_orca_calculator.sh
+archive/
