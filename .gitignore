@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Test and tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Editors and desktop
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+
+# Local run artifacts (never publish calculation results)
+*.log
+workspace/
