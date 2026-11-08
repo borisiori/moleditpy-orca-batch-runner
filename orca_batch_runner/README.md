@@ -1,8 +1,11 @@
-# MoleditPy ORCA Calculator Plugin
+# MoleditPy ORCA Batch Runner Plugin
 
 > Screenshots and the demo video live in the GitHub repository `img/` and `docs/` folders.
 
 
+### 🎬 Demo video
+
+https://github.com/user-attachments/assets/80291e95-2bdc-484f-b256-e6b41ba6489d
 
 A job queue manager for the [ORCA](https://www.faccts.de/orca/) quantum
 chemistry package, running inside
@@ -196,9 +199,9 @@ sample.
 
 ## Setup
 
-1. Put the `orca_calculator` folder into your MoleditPy `plugins` directory
+1. Put the `orca_batch_runner` folder into your MoleditPy `plugins` directory
    (`~/.moleditpy/plugins/`).
-2. Start MoleditPy and open **Extensions → ORCA Calculator…**.
+2. Start MoleditPy and open **Extensions → ORCA Batch Runner…**.
 3. First run only: check the ORCA Setup bar (auto-detected on open; use
    **Browse…** if detection fails). The binary path and the workspace folder
    are remembered.

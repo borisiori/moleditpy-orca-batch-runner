@@ -10,7 +10,7 @@ os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 from moleditpy.plugins.plugin_manager import PluginManager
 
 PLUGIN_SRC = os.path.join(
-    os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "orca_calculator"
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "orca_batch_runner"
 )
 
 
@@ -20,7 +20,7 @@ def main() -> int:
     try:
         shutil.copytree(
             PLUGIN_SRC,
-            os.path.join(tmp, "orca_calculator"),
+            os.path.join(tmp, "orca_batch_runner"),
             ignore=shutil.ignore_patterns("__pycache__", ".git", "tests"),
         )
         manager = PluginManager()
@@ -30,7 +30,7 @@ def main() -> int:
             print(f"{plugin.get('name')} | {plugin.get('status')} | "
                   f"{plugin.get('version')}")
         ok = any(
-            plugin.get("name") == "ORCA Calculator"
+            plugin.get("name") == "ORCA Batch Runner"
             and "Error" not in str(plugin.get("status"))
             and plugin.get("status") not in (None, "No Entry Point")
             for plugin in plugins

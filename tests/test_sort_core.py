@@ -7,7 +7,7 @@ os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from orca_calculator import sort_core
+from orca_batch_runner import sort_core
 
 
 def make_workspace(tmp_path):
@@ -121,7 +121,7 @@ def test_sort_tab_execute_plan_end_to_end(tmp_path, monkeypatch):
     that no longer exist (a stale counts['deleted'] once crashed it)."""
     from PySide6.QtWidgets import QApplication, QMessageBox, QWidget
 
-    from orca_calculator.sort_tab import SortTab
+    from orca_batch_runner.sort_tab import SortTab
 
     app = QApplication.instance() or QApplication(sys.argv)
     root, run = make_workspace(tmp_path)

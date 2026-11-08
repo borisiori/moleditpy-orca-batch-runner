@@ -9,8 +9,8 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from PySide6.QtWidgets import QApplication
 
-from orca_calculator import config
-from orca_calculator.gui import OrcaCalculatorDialog
+from orca_batch_runner import config
+from orca_batch_runner.gui import OrcaCalculatorDialog
 
 
 class StubContext:

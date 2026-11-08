@@ -15,8 +15,8 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from PySide6.QtWidgets import QApplication
 
-from orca_calculator import config, monitor_core, sort_core
-from orca_calculator.runner import QueueRunner
+from orca_batch_runner import config, monitor_core, sort_core
+from orca_batch_runner.runner import QueueRunner
 
 H2_INP = """! HF STO-3G
 * xyz 0 1

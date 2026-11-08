@@ -1,4 +1,4 @@
-# Registry request draft — Register New Plugin: ORCA Calculator
+# Registry request draft — Register New Plugin: ORCA Batch Runner
 
 Fill the placeholders (`<...>`) after publishing the release, then submit at
 https://github.com/HiroYokoyama/moleditpy-plugins/issues/new/choose using the
@@ -8,11 +8,11 @@ them, plus tag/version alignment and the SHA-256 of the asset).
 
 ---
 
-**Title:** Register New Plugin: ORCA Calculator
+**Title:** Register New Plugin: ORCA Batch Runner
 
-- **Plugin Source URL:** `https://github.com/borisiori/moleditpy-orca-calculator/releases/download/v2026.11.04/orca_calculator.zip`
+- **Plugin Source URL:** `https://github.com/borisiori/moleditpy-orca-batch-runner/releases/download/v2026.11.04/orca_batch_runner.zip`
 - **Target Action:** Register a New Plugin
-- **Plugin ID:** `orca_calculator`
+- **Plugin ID:** `orca_batch_runner`
 - **Expected SHA-256 Hash:** `bd51df9226c1f496227a54242b595350a115f410f4a966509705848df322c870`
 - **Tags:** Optimization
 - **Dependencies:** PySide6-Essentials
@@ -38,15 +38,15 @@ them, plus tag/version alignment and the SHA-256 of the asset).
 
 ## Pre-submission steps (checklist)
 
-1. [ ] Create the GitHub repository (suggested name: `moleditpy-orca-calculator`).
+1. [ ] Create the GitHub repository (suggested name: `moleditpy-orca-batch-runner`).
 2. [ ] Push this project (`.gitignore` already excludes caches and venvs).
-3. [ ] Verify `PLUGIN_VERSION` (2026.11.04) in `orca_calculator/__init__.py`.
+3. [ ] Verify `PLUGIN_VERSION` (2026.11.04) in `orca_batch_runner/__init__.py`.
 4. [ ] Commit and tag: `git tag v2026.11.04` (tag must equal PLUGIN_VERSION).
 5. [ ] Build the asset from the tag:
-       `git archive --format=zip -o orca_calculator.zip v2026.11.04 orca_calculator`
-       (or zip the `orca_calculator/` folder from a clean checkout).
-6. [ ] Create the GitHub Release `v2026.11.04` and attach `orca_calculator.zip`.
-7. [ ] Compute the hash of the uploaded file: `shasum -a 256 orca_calculator.zip`.
+       `git archive --format=zip -o orca_batch_runner.zip v2026.11.04 orca_batch_runner`
+       (or zip the `orca_batch_runner/` folder from a clean checkout).
+6. [ ] Create the GitHub Release `v2026.11.04` and attach `orca_batch_runner.zip`.
+7. [ ] Compute the hash of the uploaded file: `shasum -a 256 orca_batch_runner.zip`.
 8. [ ] Fill the placeholders above with the real asset URL and hash.
 9. [ ] Submit the issue and mention the demo video/screenshots if desired.
 

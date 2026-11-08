@@ -1,6 +1,6 @@
-# ORCA Calculator: job queue manager for the ORCA quantum chemistry package.
-PLUGIN_NAME = "ORCA Calculator"
-PLUGIN_VERSION = "2026.11.04"
+# ORCA Batch Runner: job queue manager for the ORCA quantum chemistry package.
+PLUGIN_NAME = "ORCA Batch Runner"
+PLUGIN_VERSION = "2026.11.08"
 PLUGIN_AUTHOR = "borisiori"
 PLUGIN_LICENSE = "LGPL-3.0-or-later"
 PLUGIN_DESCRIPTION = (
@@ -73,4 +73,4 @@ def initialize(context):
         new_dlg.show()
 
     # Register the menu action
-    context.add_menu_action("Extensions/ORCA Calculator...", show_dialog)
+    context.add_menu_action("Extensions/ORCA Batch Runner...", show_dialog)

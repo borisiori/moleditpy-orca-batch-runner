@@ -294,7 +294,7 @@ class SortTab(QWidget):
                 changed += 1
         if not changed:
             QMessageBox.information(
-                self, "ORCA Calculator", "No conflict rows in the selection."
+                self, "ORCA Batch Runner", "No conflict rows in the selection."
             )
 
     def _no_move_selected(self):
@@ -307,7 +307,7 @@ class SortTab(QWidget):
                 changed += 1
         if not changed:
             QMessageBox.information(
-                self, "ORCA Calculator", "No movable files in the selection."
+                self, "ORCA Batch Runner", "No movable files in the selection."
             )
 
     def _select_conflicts(self):
@@ -322,7 +322,7 @@ class SortTab(QWidget):
                 found = True
         if not found:
             QMessageBox.information(
-                self, "ORCA Calculator", "No conflicts in the current preview."
+                self, "ORCA Batch Runner", "No conflicts in the current preview."
             )
 
     # ----------------------------------------------------------- execution
@@ -332,14 +332,14 @@ class SortTab(QWidget):
         run_dir = sort_core.run_dir_of(self.workspace)
         if not run_dir.exists():
             QMessageBox.critical(
-                self, "ORCA Calculator", f"Run folder not found:\n{run_dir}"
+                self, "ORCA Batch Runner", f"Run folder not found:\n{run_dir}"
             )
             return
 
         executable = sort_core.executable_operations(self.operations)
         if not executable:
             QMessageBox.information(
-                self, "ORCA Calculator",
+                self, "ORCA Batch Runner",
                 "There are no executable operations in the current preview.",
             )
             return
@@ -370,7 +370,7 @@ class SortTab(QWidget):
                 sort_core.ensure_project_folders(base_dir)
             except OSError as e:
                 QMessageBox.critical(
-                    self, "ORCA Calculator", f"Cannot create target folders:\n{e}"
+                    self, "ORCA Batch Runner", f"Cannot create target folders:\n{e}"
                 )
                 return
 

@@ -1,6 +1,12 @@
-# Release Notes — ORCA Calculator 2026.11.04
+# Release Notes — ORCA Batch Runner 2026.11.08
 
-Initial release of the MoleditPy ORCA Calculator plugin.
+Renamed release of the MoleditPy ORCA job queue plugin, following the
+registry review: **ORCA Calculator → ORCA Batch Runner** (the plugin manages
+and runs ORCA jobs rather than performing calculations itself). The module
+folder and plugin ID changed accordingly (`orca_calculator` →
+`orca_batch_runner`), and a GitHub Actions CI now runs the headless test
+suite on Linux (Python 3.10/3.12/3.14) so maintainers can verify the tests
+independently. No functional changes versus 2026.11.04.
 
 ## What it does
 
@@ -37,10 +43,11 @@ platforms exist in `proc.py` / `monitor_core.py` and are clearly marked.
 ## Testing
 
 - 43 pytest tests (headless, offscreen Qt, fake ORCA executable) — all
-  passing on Python 3.14 / Linux.
+  passing on Python 3.10–3.14 / Linux via GitHub Actions and verified
+  locally on Python 3.14.
 - End-to-end pipeline against a real ORCA binary
   (`tests/e2e_real_orca.py`, H2/HF/STO-3G): queue run, results collection,
-  monitor analysis and sort — verified.
+  monitor analysis and sort — verified locally (not part of CI).
 
 ## Known limitations
 

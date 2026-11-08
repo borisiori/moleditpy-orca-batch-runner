@@ -46,7 +46,7 @@ class OrcaCalculatorDialog(QDialog):
         self.runner = QueueRunner(self)
         self.runner.job_output.connect(self.log)
 
-        title = "ORCA Calculator"
+        title = "ORCA Batch Runner"
         if version:
             title += f" v{version}"
         self.setWindowTitle(title)
@@ -107,27 +107,27 @@ class OrcaCalculatorDialog(QDialog):
     def start_queue(self, paths):
         """Entry point used by the Queue tab's Launch button."""
         if self.runner.is_running():
-            QMessageBox.warning(self, "ORCA Calculator", "A queue is already running.")
+            QMessageBox.warning(self, "ORCA Batch Runner", "A queue is already running.")
             return
         ok, message = config.validate_binary(self.binary)
         if not ok:
             QMessageBox.warning(
                 self,
-                "ORCA Calculator",
+                "ORCA Batch Runner",
                 f"The ORCA executable is not usable ({message}).\n"
                 "Fix it in the ORCA Setup section above.",
             )
             return
         if not self.workspace:
             QMessageBox.warning(
-                self, "ORCA Calculator", "Set the workspace folder first."
+                self, "ORCA Batch Runner", "Set the workspace folder first."
             )
             return
         try:
             config.ensure_workspace_layout(self.workspace)
         except OSError as e:
             QMessageBox.critical(
-                self, "ORCA Calculator", f"Cannot create workspace folders:\n{e}"
+                self, "ORCA Batch Runner", f"Cannot create workspace folders:\n{e}"
             )
             return
 
@@ -254,7 +254,7 @@ class OrcaCalculatorDialog(QDialog):
         else:
             QMessageBox.information(
                 self,
-                "ORCA Calculator",
+                "ORCA Batch Runner",
                 "No ORCA executable was found automatically.\n"
                 "Set ORCA_BIN, add it to PATH, or use Browse…",
             )
@@ -319,7 +319,7 @@ class OrcaCalculatorDialog(QDialog):
         if self.runner.is_running():
             answer = QMessageBox.question(
                 self,
-                "Close ORCA Calculator",
+                "Close ORCA Batch Runner",
                 "A queue is running.\n\nClosing will stop the whole process tree\n"
                 "(same as stopping the run now). Close and stop?",
                 QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,

@@ -12,7 +12,7 @@ from PySide6.QtWidgets import QApplication
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from orca_calculator.runner import QueueRunner
+from orca_batch_runner.runner import QueueRunner
 
 FAKE_OK = (
     "#!/usr/bin/env bash\n"
@@ -158,7 +158,7 @@ def test_final_banner_styles(app):
     """The queue end shows a big launcher-style banner."""
     from PySide6.QtWidgets import QWidget
 
-    from orca_calculator.run_tab import RunTab
+    from orca_batch_runner.run_tab import RunTab
 
     stub = QWidget()  # minimal dialog stand-in (buttons bind to its methods)
     stub.stop_queue = lambda: None

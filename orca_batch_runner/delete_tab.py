@@ -195,7 +195,7 @@ class DeleteTab(QWidget):
         rows = sorted({i.row() for i in self.table.selectedItems()})
         if not rows:
             QMessageBox.information(
-                self, "ORCA Calculator", "Select one or more rows first."
+                self, "ORCA Batch Runner", "Select one or more rows first."
             )
             return
         for row in rows:
@@ -230,14 +230,14 @@ class DeleteTab(QWidget):
         run_dir = delete_core.run_dir_of(self.workspace)
         if not run_dir.exists():
             QMessageBox.critical(
-                self, "ORCA Calculator", f"Run folder not found:\n{run_dir}"
+                self, "ORCA Batch Runner", f"Run folder not found:\n{run_dir}"
             )
             return
 
         to_delete = [c for c in self.candidates if c["decision"] == "Delete"]
         if not to_delete:
             QMessageBox.information(
-                self, "ORCA Calculator", "No files are marked for deletion."
+                self, "ORCA Batch Runner", "No files are marked for deletion."
             )
             return
 

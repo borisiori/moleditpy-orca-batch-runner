@@ -10,7 +10,7 @@ from PySide6.QtWidgets import QApplication
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from orca_calculator.gui import OrcaCalculatorDialog
+from orca_batch_runner.gui import OrcaCalculatorDialog
 
 
 class StubContext:

@@ -1,4 +1,6 @@
-# MoleditPy ORCA Calculator Plugin
+# MoleditPy ORCA Batch Runner Plugin
+
+[![pytest](https://github.com/borisiori/moleditpy-orca-batch-runner/actions/workflows/pytest.yml/badge.svg)](https://github.com/borisiori/moleditpy-orca-batch-runner/actions/workflows/pytest.yml)
 
 ### 🎬 Demo video
 
@@ -201,9 +203,9 @@ sample.
 
 ## Setup
 
-1. Put the `orca_calculator` folder into your MoleditPy `plugins` directory
+1. Put the `orca_batch_runner` folder into your MoleditPy `plugins` directory
    (`~/.moleditpy/plugins/`).
-2. Start MoleditPy and open **Extensions → ORCA Calculator…**.
+2. Start MoleditPy and open **Extensions → ORCA Batch Runner…**.
 3. First run only: check the ORCA Setup bar (auto-detected on open; use
    **Browse…** if detection fails). The binary path and the workspace folder
    are remembered.

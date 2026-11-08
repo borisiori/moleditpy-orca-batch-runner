@@ -8,7 +8,7 @@ os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from orca_calculator import monitor_core
+from orca_batch_runner import monitor_core
 
 OPT_FREQ_OUT = """\
                              * O   R   C   A *
@@ -121,7 +121,7 @@ def test_collect_sorts_running_first(tmp_path):
 
 
 def test_progress_text_by_job_type():
-    from orca_calculator.monitor_tab import _progress_text
+    from orca_batch_runner.monitor_tab import _progress_text
 
     opt = {
         "type": "OPT", "status": "FINISHED", "cycles": 12,
@@ -336,7 +336,7 @@ def test_optts_checklist_and_ts_verdict(tmp_path):
 
 
 def test_compact_column_formats():
-    from orca_calculator.monitor_tab import _energy_text, _runtime_text
+    from orca_batch_runner.monitor_tab import _energy_text, _runtime_text
 
     assert _energy_text({"energy": "-1733.701011700000"}) == "-1733.701012"
     assert _energy_text({"energy": None}) == ""
@@ -352,7 +352,7 @@ def test_selection_survives_refresh(tmp_path):
     """The details panel must not be wiped by the periodic monitor refresh."""
     from PySide6.QtWidgets import QApplication
 
-    from orca_calculator.monitor_tab import MonitorTab
+    from orca_batch_runner.monitor_tab import MonitorTab
 
     app = QApplication.instance() or QApplication(sys.argv)
     make_run(tmp_path, "run_a", OPT_FREQ_OUT)
@@ -379,7 +379,7 @@ def test_results_open_button_gated_by_status(tmp_path):
     """Open is offered only on rows that finished correctly."""
     from PySide6.QtWidgets import QApplication
 
-    from orca_calculator.monitor_tab import MonitorTab
+    from orca_batch_runner.monitor_tab import MonitorTab
 
     app = QApplication.instance() or QApplication(sys.argv)
     make_run(tmp_path, "done_job", OPT_FREQ_OUT)
