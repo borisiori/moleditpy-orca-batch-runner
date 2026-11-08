@@ -1,53 +1,32 @@
-# Registry request draft — Register New Plugin: ORCA Batch Runner
+# Registry request — Register New Plugin: ORCA Batch Runner
 
-Fill the placeholders (`<...>`) after publishing the release, then submit at
-https://github.com/HiroYokoyama/moleditpy-plugins/issues/new/choose using the
-"Request Plugin Registration / Update" template. Metadata below must match the
-`PLUGIN_*` constants in the release code exactly (the workflow validates
-them, plus tag/version alignment and the SHA-256 of the asset).
+Submitted and under review: https://github.com/HiroYokoyama/moleditpy-plugins/issues/59
+Renamed from "ORCA Calculator" following the maintainer's review; v2026.11.08
+is the asset proposed for registration.
 
 ---
 
 **Title:** Register New Plugin: ORCA Batch Runner
 
-- **Plugin Source URL:** `https://github.com/borisiori/moleditpy-orca-batch-runner/releases/download/v2026.11.04/orca_batch_runner.zip`
+- **Plugin Source URL:** https://github.com/borisiori/moleditpy-orca-batch-runner/releases/download/v2026.11.08/orca_batch_runner.zip
 - **Target Action:** Register a New Plugin
 - **Plugin ID:** `orca_batch_runner`
-- **Expected SHA-256 Hash:** `bd51df9226c1f496227a54242b595350a115f410f4a966509705848df322c870`
+- **Expected SHA-256 Hash:** 7a5df747dfab8cf219c1c331d67c8896584c870ff2f3f2af3402069872e6ba24
 - **Tags:** Optimization
 - **Dependencies:** PySide6-Essentials
 - **Visibility:** Yes, make this plugin visible in the registry manager.
-- **Supported MoleditPy Version:** `>=5.0.0, <6.0.0`
-- **Supported Python Version:** `>=3.10, <3.15`
-- **Additional Information:**
+- **Supported MoleditPy Version:** >=5.0.0, <6.0.0
+- **Supported Python Version:** >=3.10, <3.15
+- **Additional Information:** job queue manager for a local ORCA installation;
+  see the issue thread for the full description.
 
-  > Job queue manager for a local ORCA installation (tested with ORCA 6.1.1
-  > on Linux): sequential queue with live output and stop controls, a
-  > background monitor with per-job-type progress (SCF, optimization
-  > criteria, analytic Hessian with ETA, relaxed scans, OptTS), and
-  > Sort/Delete tools for the results workspace (two modes: by file type or
-  > whole-run folders). Input files are preserved with their results, and
-  > `.bibtex` references are kept, never deleted. Linux-only by design
-  > (`/proc` process-tree control, `fuser`-based activity detection);
-  > `PLUGIN_SUPPORTED_OS` declares it. Input generation is intentionally out
-  > of scope (covered by ORCA Input Generator Pro); result visualization
-  > delegates to ORCA Result Analyzer through the standard file-opener
-  > registry.
+## Release procedure (for future versions)
 
----
-
-## Pre-submission steps (checklist)
-
-1. [ ] Create the GitHub repository (suggested name: `moleditpy-orca-batch-runner`).
-2. [ ] Push this project (`.gitignore` already excludes caches and venvs).
-3. [ ] Verify `PLUGIN_VERSION` (2026.11.04) in `orca_batch_runner/__init__.py`.
-4. [ ] Commit and tag: `git tag v2026.11.04` (tag must equal PLUGIN_VERSION).
-5. [ ] Build the asset from the tag:
-       `git archive --format=zip -o orca_batch_runner.zip v2026.11.04 orca_batch_runner`
-       (or zip the `orca_batch_runner/` folder from a clean checkout).
-6. [ ] Create the GitHub Release `v2026.11.04` and attach `orca_batch_runner.zip`.
-7. [ ] Compute the hash of the uploaded file: `shasum -a 256 orca_batch_runner.zip`.
-8. [ ] Fill the placeholders above with the real asset URL and hash.
-9. [ ] Submit the issue and mention the demo video/screenshots if desired.
-
-> **Submitted**: https://github.com/HiroYokoyama/moleditpy-plugins/issues/59 (2026-11-07)
+1. Update `PLUGIN_VERSION` in `orca_batch_runner/__init__.py` (date format).
+2. Commit on `main`; the CI suite must be green.
+3. `git tag v<VERSION>` and push the tag.
+4. `git archive --format=zip -o orca_batch_runner.zip v<VERSION> orca_batch_runner`
+5. GitHub Release `v<VERSION>` attaching that zip; download it back and run
+   `shasum -a 256` over the downloaded file.
+6. Open an "Update an Existing Plugin" issue with the new URL + hash,
+   keeping the Plugin ID.
