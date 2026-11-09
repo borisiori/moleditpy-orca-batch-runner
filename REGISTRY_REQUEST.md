@@ -30,3 +30,9 @@ is the asset proposed for registration.
    `shasum -a 256` over the downloaded file.
 6. Open an "Update an Existing Plugin" issue with the new URL + hash,
    keeping the Plugin ID.
+
+> **Approved and registered: 2026-11-09.** Security review passed; tested by the
+> maintainer on MoleditPy 5.1.3 (43 tests, load, mock end-to-end). The plugin is
+> live in the official registry (id `orca_batch_runner`, visible) and appears in
+> the Plugin Installer. Future updates: new version -> release -> "Update an
+> Existing Plugin" issue with the same plugin ID.
